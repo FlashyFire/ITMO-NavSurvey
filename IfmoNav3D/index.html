@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Прототип 3D навигатора по главному корпусу ИТМО</title>
+  <link href="./favicon.ico" rel="icon" type="image/x-icon" />
+  <meta name="viewport" content="width=device-width" />
+  <script src="https://unpkg.com/jquery"></script>
+  <script src="https://surveyjs.azureedge.net/1.8.17/survey.jquery.min.js"></script>
+  <link href="https://surveyjs.azureedge.net/1.8.17/modern.css" type="text/css" rel="stylesheet" />
+  <link href="./site.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="container">
+    <canvas id="c"></canvas>
+    <div id="nav">
+      <button class="accordion active">Аудитория/кабинет</button>
+      <div id="room-panel" class="panel" style="display: block;">
+        <input type="text" id="room" name="room" list="room-list" placeholder="Аудитория">
+        <datalist id="room-list">
+          <option value="141">
+          <option value="262">
+          <option value="285">
+          <option value="380">
+          <option value="471">
+          <option value="Актовый зал">
+          <option value="Библиотека">
+        </datalist>
+        <button type="button" id="show-room" class="run-button">&gt;</button>
+      </div>
+
+      <button class="accordion">Номер группы</button>
+      <div id="group-panel" class="panel">
+        <input type="text" id="group" name="group" list="group-list" placeholder="Номер группы">
+        <datalist id="group-list">
+          <option value="P4170">
+          <option value="P4171">
+        </datalist>
+        <button type="button" id="show-group" class="run-button">&gt;</button>
+      </div>
+
+      <button class="accordion">Преподаватель</button>
+      <div id="teacher-panel" class="panel">
+        <input type="text" id="teacher" name="teacher" list="teacher-list" placeholder="Фамилия преподавателя">
+        <datalist id="teacher-list">
+          <option value="Балканский">
+          <option value="Локалов">
+          <option value="Саркисова">
+        </datalist>
+        <button type="button" id="show-teacher" class="run-button">&gt;</button>
+      </div>
+
+      <button class="accordion">Поиск</button>
+      <div id="place-panel" class="panel">
+        <input type="text" id="place" name="place" placeholder="Наименование">
+        <button type="button" id="show-place" class="run-button">&gt;</button>
+      </div>
+    </div>
+    <div id="survey-element"></div>
+  </div>
+  <script type="module" src="./scripts/survey.js"></script>
+  <script type="module" src="./scripts/app.js"></script>
+</body>
+
+</html>
